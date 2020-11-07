@@ -1,5 +1,9 @@
 default_border pixel
 
+for_window [tiling] border pixel 1
+
+client.focused          #4c7899 #285577 #ffffff #00FF00 #ffffff
+
 set $mod Mod4
 
 # Font
@@ -154,7 +158,8 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
-bindsym $mod+F1 exec chromium
+#bindsym $mod+F1 exec chromium
+bindsym $mod+F1 exec firefox
 #bindsym Print exec flameshot 
 bindsym $mod+F3 exec telegram-desktop
 
@@ -162,5 +167,5 @@ exec --no-startup-id redshift &
 exec --no-startup-id flameshot &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 exec_always --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle' &
-exec_always --no-startup-id  picom &
+exec_always --no-startup-id  picom -b --config ~/.config/picom/picom.conf &
 exec --no-startup-id nitrogen --restore; sleep 1;
