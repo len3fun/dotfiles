@@ -163,12 +163,15 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+F1 exec chromium
 #bindsym $mod+F1 exec firefox
+bindsym $mod+F2 exec pycharm
 bindsym Print exec flameshot gui
 bindsym $mod+F3 exec telegram-desktop
+bindsym $mod+F4 exec goland
 
 exec --no-startup-id redshift &
 exec --no-startup-id flameshot &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
-exec_always --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle' &
+#exec_always --no-startup-id setxkbmap -option ctrl:swapcaps &
+exec_always --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle,ctrl:swapcaps' &
 exec_always --no-startup-id  picom -b --config ~/.config/picom/picom.conf &
 exec --no-startup-id nitrogen --restore; sleep 1;
